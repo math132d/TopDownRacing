@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/scenes/test.gd" type="Script" id=1]
+[ext_resource path="res://assets/entities/Effects/explosive_sparks.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/entities/cars/car.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/entities/obstacles/metal_box.tscn" type="PackedScene" id=4]
+
+[node name="root" type="Node2D"]
+script = ExtResource( 1 )
+sparks = ExtResource( 2 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 569.466, 346.831 )
+
+[node name="RigidBody2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 251.608, 253.574 )
+
+[connection signal="collision" from="KinematicBody2D" to="." method="_on_KinematicBody2D_collision"]

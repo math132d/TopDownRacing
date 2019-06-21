@@ -14,5 +14,4 @@ position = Vector2( 569.466, 346.831 )
 
 [node name="RigidBody2D" parent="." instance=ExtResource( 4 )]
 position = Vector2( 251.608, 253.574 )
-
 [connection signal="collision" from="KinematicBody2D" to="." method="_on_KinematicBody2D_collision"]

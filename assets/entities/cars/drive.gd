@@ -36,8 +36,9 @@ func _physics_process(delta):
 	
 	if collision:
 		if just_collided:
-			Input.start_joy_vibration(joypads[0], 0.2, 1, 0.1)
-			just_collided = false
+			if len(joypads) > 0:
+				Input.start_joy_vibration(joypads[0], 0.2, 1, 0.1)
+				just_collided = false
 			
 		velocity = 0
 	else:

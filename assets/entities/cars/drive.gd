@@ -38,17 +38,17 @@ func _physics_process(delta):
 		
 	self.velocity += acceleration
 	
-	var collision = move_and_collide(get_move_vector() * delta)
+	var collision = move_and_slide(get_move_vector())
 	
-	if collision:
-		if just_collided:
-			if len(joypads) > 0:
-				Input.start_joy_vibration(joypads[0], 0.2, 1, 0.1)
-				just_collided = false
-			
-		velocity = 0
-	else:
-		just_collided = true
+#	if collision:
+#		if just_collided:
+#			if len(joypads) > 0:
+#				Input.start_joy_vibration(joypads[0], 0.2, 1, 0.1)
+#				just_collided = false
+#
+#		velocity = 0
+#	else:
+#		just_collided = true
 		
 
 func accelerate(forward, strength):
